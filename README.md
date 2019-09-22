@@ -1,11 +1,11 @@
-## Cats Dealer 
+## Cats Dealer
 ### Hi, there!
 You are going to create simple service that allows finding the best pussycat - best price for customer location.
 
-The are pussycat shops that have pricelists accessible via REST API. What your service will do is just get prices from each shop, compare them and suggest the best deal for a customer!
+There are pussycat shops that have pricelists accessible via REST API. What your service will do is just get prices from each shop, compare them and suggest the best deal for a customer!
 
 We created 2 fake test shops for you.
-One - "Cats Unlimited" - can be accessed by this URL: 
+One - "Cats Unlimited" - can be accessed by this URL:
 
 https://nh7b1g9g23.execute-api.us-west-2.amazonaws.com/dev/cats/json
 
@@ -31,4 +31,3 @@ You know, Trainee not always writes a good code. You probably agree if I say tha
 #### 2. Implement "XML" integration, and improve business logic to find the best deal amongst two shops.
 
 ## Be strong and good luck!
-
