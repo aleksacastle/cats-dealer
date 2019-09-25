@@ -10,14 +10,10 @@ AllCops:
     - tmp/**/*
 
 Metrics/LineLength:
-  Max: 95
+  Max: 120
 
 Style/Documentation:
   Enabled: false
-
-Metrics/BlockLength:
-  Enabled: true
-  Max: 200
 
 Style/MultilineBlockChain:
   Enabled: false
