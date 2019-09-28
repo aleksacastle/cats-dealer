@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '~> 5.1.1'
 gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
 gem 'sassc-rails', '>= 2.1.0'
+gem 'sinatra', '~> 2.0', '>= 2.0.7'
 gem 'sqlite3'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
@@ -23,6 +24,8 @@ group :development, :test do
 end
 
 group :test do
+  gem 'capybara', '~> 3.29'
   gem 'rspec-rails', '~> 3.6.0'
   gem 'simplecov', require: false
+  gem 'webmock', '~> 3.7', '>= 3.7.5'
 end
