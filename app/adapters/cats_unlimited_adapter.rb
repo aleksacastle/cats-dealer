@@ -4,10 +4,6 @@ class CatsUnlimitedAdapter < BaseAdapter
   def process_payload
     return if cats_payload.empty?
 
-    cats_payload.map! do |cat|
-      cat(name: cat['name'], price: cat['price'].to_i, location: cat['location'], image: cat['image'])
-    end
-
     matched_cats = cats_payload.select { |cat| matched?(cat) }
     lowest_price = matched_cats.map { |cat| cat.price }.min
     matched_cats.select { |cat| cat.price == lowest_price  }
@@ -15,11 +11,13 @@ class CatsUnlimitedAdapter < BaseAdapter
 
   private
 
-  def parser_class
-    ::Parsers::JsonParser
+  def cats_payload
+    @cats_payload ||= response_payload.map do |cat|
+      cat(name: cat['name'], price: cat['price'].to_i, location: cat['location'], image: cat['image'])
+    end
   end
 
-  def request_url
-
+  def parser_class
+    ::Parsers::JsonParser
   end
 end

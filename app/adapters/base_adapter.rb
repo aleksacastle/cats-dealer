@@ -20,7 +20,7 @@ class BaseAdapter
 
   private
 
-  mandatory_methods :parser_class, :request_url, :process_payload
+  mandatory_methods :parser_class, :process_payload
 
   attr_reader :type, :location
 
@@ -32,8 +32,8 @@ class BaseAdapter
     cat.name == type && cat.location == location
   end
 
-  def cats_payload
-    @cats_payload ||= parser_class.parse(request_response.body)
+  def response_payload
+    @response_payload ||= parser_class.parse(request_response.body)
   end
 
   def request_response
