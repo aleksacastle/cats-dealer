@@ -1,7 +1,7 @@
 module Parsers
   class BaseParser
-    def self.parse(_)
-      raise NotImplementedError, 'Subclasses must define `self.parse`.'
-    end
+    include MandatoryMethods
+
+    mandatory_methods :parse
   end
 end
