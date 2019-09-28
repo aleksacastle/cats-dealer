@@ -1,0 +1,22 @@
+- if @facade.cats_found?
+  %span.pt-3.text-center
+    %h1 Best price for your location:
+    %h1= @facade.best_price
+
+  %table.table.table-striped
+    %thead.thead-dark
+      %tr
+        %th Type
+        %th Price
+        %th Location
+        %th Image
+    %tbody
+      - @facade.cats.each do |cat|
+        %tr
+          %td= cat.name
+          %td= cat.price
+          %td= cat.location
+          %td= image_tag(cat.image, width: '150px')
+- else
+  %h1.pt-5.text-center
+    = @facade.not_found_error
