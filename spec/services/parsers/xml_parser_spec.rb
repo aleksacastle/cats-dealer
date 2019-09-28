@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 describe Parsers::XmlParser do
-  let(:filename) { Rails.root.join('spec/support/helper_files', 'test.xml') }
-  let(:file) { File.open(filename) }
-  let(:payload) { file.read }
+  let(:payload) { Net::HTTP.get(HappyCatsAdapter.host, HappyCatsAdapter.path) }
   let(:result) { described_class.parse(payload) }
   let(:first_record) { result.first }
 

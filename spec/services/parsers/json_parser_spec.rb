@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 describe Parsers::JsonParser do
-  let(:filename) { Rails.root.join('spec/support/helper_files', 'test.json') }
-  let(:file) { File.open(filename) }
-  let(:payload) { file.read }
+  let(:payload) { Net::HTTP.get(CatsUnlimitedAdapter.host, CatsUnlimitedAdapter.path) }
   let(:result) { described_class.parse(payload) }
   let(:first_record) { result.first }
 
