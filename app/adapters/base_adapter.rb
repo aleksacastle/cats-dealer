@@ -18,9 +18,15 @@ class BaseAdapter
     URI(self::REQUEST_URL).path
   end
 
+  def process_payload
+    return if cats_payload.empty?
+
+    cats_payload.select { |cat| matched?(cat) }
+  end
+
   private
 
-  mandatory_methods :parser_class, :process_payload
+  mandatory_methods :parser_class, :cats_payload
 
   attr_reader :type, :location
 
